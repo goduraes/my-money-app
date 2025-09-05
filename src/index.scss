@@ -1,0 +1,12 @@
+@use "tailwindcss";
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+html, body {
+  font-family: "Outfit", sans-serif;
+  background: #f5f5f5;
+}
+
+::placeholder {
+  display: flex;
+  justify-content: center;
+}

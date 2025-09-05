@@ -1,0 +1,73 @@
+#protected-route {
+  transition: margin-left 400ms;
+
+  a.active {
+    border-color: white;
+  }
+
+  header {
+    top: 0;
+    left: 0;
+    transition: width 400ms, padding-left 400ms;
+  }
+
+  nav {
+    top: 0;
+    left: 0;
+    transition: width 400ms, margin-left 400ms;
+  }
+
+  &.nav-open {
+    margin-left: 280px;
+
+    header {
+      padding-left: 338px;
+    }
+
+    nav {
+      width: 280px;
+    }
+  }
+
+  &.nav-close {
+    margin-left: 74px;
+
+    header {
+      padding-left: 132px;
+    }
+
+    nav {
+      width: 74px;
+    }
+  }
+
+  @media (max-width: 768px) {
+    &.nav-open {
+      margin-left: 0;
+
+      header {
+        padding-left: 56px;
+      }
+
+      nav {
+        left: 0;
+      }
+    }
+
+    &.nav-close {
+      margin-left: 0;
+
+      header {
+        padding-left: 56px;
+      }
+
+      nav {
+        left: -74px;
+      }
+    }
+  }
+}
+
+
+
+

@@ -6,6 +6,8 @@ import { Outlet, useNavigate } from 'react-router-dom';
 interface AuthContextType {
   user: User | null;
   session: Session | null;
+  isAdmin: boolean;
+  getIsAdmin: () => Promise<void>;
   register: (email: string, password: string, name: string) => Promise<{ error?: string }>;
   login: (email: string, password: string) => Promise<{ error?: string }>;
   logout: () => Promise<void>;
@@ -22,6 +24,7 @@ export const AuthProvider = () => {
   const navigate = useNavigate();
   const [user, setUser] = useState<User | null>(null);
   const [session, setSession] = useState<Session | null>(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -42,6 +45,12 @@ export const AuthProvider = () => {
 
     return () => subscription.unsubscribe();
   }, []);
+
+  const getIsAdmin = async() => {
+    if (!user) return;
+    const { data } = await supabase.from('admin_profiles').select('*').eq('user_id', user.id);
+    setIsAdmin(data?.length ? true : false)
+  }
 
   const register = async (email: string, password: string, name: string) => {
     try {
@@ -129,7 +138,7 @@ export const AuthProvider = () => {
   };
 
   return (
-    <AuthContext.Provider value={{ user, session, register, login, logout, resetPassword, updatePassword, loading }}>
+    <AuthContext.Provider value={{ user, session, isAdmin, getIsAdmin, register, login, logout, resetPassword, updatePassword, loading }}>
       { !loading && <Outlet /> }
     </AuthContext.Provider>
   );

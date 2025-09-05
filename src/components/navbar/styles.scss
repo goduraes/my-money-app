@@ -8,20 +8,20 @@
   header {
     top: 0;
     left: 0;
-    transition: width 400ms, padding-left 400ms;
+    transition: all 400ms;
   }
 
   nav {
     top: 0;
     left: 0;
-    transition: width 400ms, margin-left 400ms;
+    transition: all 400ms;
   }
 
   &.nav-open {
     margin-left: 280px;
 
     header {
-      padding-left: 338px;
+      padding-left: 280px;
     }
 
     nav {
@@ -33,7 +33,7 @@
     margin-left: 74px;
 
     header {
-      padding-left: 132px;
+      padding-left: 74px;
     }
 
     nav {
@@ -46,7 +46,7 @@
       margin-left: 0;
 
       header {
-        padding-left: 56px;
+        padding-left: 0;
       }
 
       nav {
@@ -58,7 +58,7 @@
       margin-left: 0;
 
       header {
-        padding-left: 56px;
+        padding-left: 0;
       }
 
       nav {

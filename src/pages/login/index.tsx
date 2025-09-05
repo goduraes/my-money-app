@@ -62,7 +62,7 @@ const Login = () => {
   }
 
   return (
-    <div className="grid grid-cols-12 h-screen w-screen">
+    <div className="grid grid-cols-12 h-dvh">
       <div className="bg-content hidden md:block col-span-8"></div>
       <div className="flex flex-col justify-center items-center p-4 col-span-12 md:col-span-4">
         <div className="w-full max-w-md">

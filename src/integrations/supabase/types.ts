@@ -40,6 +40,50 @@ export type Database = {
           updated_at?: string
         }
         Relationships: []
+      },
+      budget: {
+        Row: {
+          id: number
+          user_id: string
+          name: string
+          expense: boolean
+          value: number
+          created_at: string
+          updated_at: string
+        }
+        Insert: {
+          id?: number
+          user_id?: string
+          name?: string
+          expense?: boolean
+          value?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Update: {
+          id?: number
+          name?: string
+          expense?: boolean
+          value?: number
+          created_at?: string
+          updated_at?: string
+        }
+        Relationships: []
+      },
+      admin_profiles: {
+        Row: {
+          id: number
+          created_at: string
+          user_id: string
+        }
+        Insert: {
+          user_id?: number
+        }
+        Update: {
+          nuser_idame?: string
+          created_at?: string
+        }
+        Relationships: []
       }
     }
     Views: {

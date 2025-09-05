@@ -1,6 +1,6 @@
 import { Navigate, Outlet } from "react-router-dom";
 
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../contexts/auth";
 import Navbar from "../navbar";
 import Loading from "../loading";
@@ -9,6 +9,11 @@ const ProtectedRoute = () => {
   const auth = useContext(AuthContext);
   const [loadingComponents, setLoadingComponents] = useState(true);
   setTimeout(() => setLoadingComponents(false), 400);
+
+  useEffect(() => {
+    auth?.getIsAdmin();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
 
   if (!auth?.user) {
     return <Navigate to="/login" />

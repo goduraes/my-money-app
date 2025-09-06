@@ -5,9 +5,9 @@ import { useForm, SubmitHandler } from "react-hook-form"
 import Input from "../../components/input";
 
 import "./styles.scss";
-import Button from "../../components/button";
 import Modal from "../../components/modal";
 import { confirmPassword, hasSpecialChar, minLength } from "../../utils/validate-password";
+import Button from "../../components/button";
 
 type InputsLogin = {
   email: string;

@@ -11,3 +11,11 @@ html, body {
   display: flex;
   justify-content: center;
 }
+
+.table-my-money {
+  overflow-x: auto;
+
+  table {
+    width: 100%;
+  }
+}

@@ -1,5 +1,4 @@
 import { InputHTMLAttributes } from "react";
-
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label?: React.ReactNode;
   message?: string;
@@ -10,12 +9,11 @@ const Input = ({ label, message, error, ...props }: InputProps) => {
   return (
     <div>
       {label && (
-        <label
-          className={`block text-sm mb-0.5 ${ error ? 'text-red-600' : 'text-gray-600' }`} htmlFor={props.id}
-        >
+        <label className={`block text-sm mb-0.5 ${ error ? 'text-red-600' : 'text-gray-600' }`} htmlFor={props.id}>
           {label}
         </label>
       )}
+
       <input
         {...props}
         className={`w-full rounded-sm border text-gray-600 h-10 p-2 focus:outline-none

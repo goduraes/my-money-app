@@ -2,9 +2,9 @@ import { useContext } from "react";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { AuthContext } from "../../contexts/auth";
 import Input from "../../components/input";
-import Button from "../../components/button";
 import { confirmPassword, hasSpecialChar, minLength } from "../../utils/validate-password";
 import { useNavigate } from "react-router-dom";
+import Button from "../../components/button";
 
 type InputsformResetPassword = {
   password: string;

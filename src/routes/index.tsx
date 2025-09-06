@@ -9,6 +9,8 @@ import ProtectedRoute from "../components/protected-route";
 import Home from "../pages/home";
 import Profile from "../pages/profile";
 
+import AdminUsers from "../pages/admin/users";
+
 const routes = createBrowserRouter([
   {
     element: <AuthProvider />,
@@ -18,6 +20,12 @@ const routes = createBrowserRouter([
         children: [
           { path: '', element: <Home /> },
           { path: 'profile', element: <Profile /> },
+          {
+            path: 'admin',
+            children: [
+              { path: 'users', element: <AdminUsers /> }
+            ]
+          }
         ]
       },
       { path: 'login', element: <Login /> },

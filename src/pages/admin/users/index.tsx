@@ -2,7 +2,6 @@ import { useEffect, useState } from "react";
 import { supabase } from "../../../integrations/supabase/client";
 import Input from "../../../components/input";
 import Button from "../../../components/button";
-import React from "react";
 
 const AdminUsers = () => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -11,6 +10,7 @@ const AdminUsers = () => {
 
   useEffect(() => {
     getUsers();
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   const getUsers = async() => {
